@@ -16,14 +16,12 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 public class JpaMain {
-    @PersistenceContext
-    private EntityManager em;
 
     private final MemberRepo mr;
     private final TeamRepo tr;
 
     @GetMapping("/test")
-    public Member test() {
+    public void test() {
         Team team = new Team();
         team.setName("TeamA");
         tr.save(team);
@@ -43,9 +41,8 @@ public class JpaMain {
             System.out.println("m = " + m.getUsername());
         }
             System.out.println("================================================================");
-        System.out.println("result : " + findMember + "\n" + findTeam);
 
-        return member;
+
     }
 
     @GetMapping("/testem")

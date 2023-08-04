@@ -2,12 +2,14 @@ package com.example.db_jpa_template.practice;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Data
+@Getter@Setter
 public class Team {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Column(name = "TEAM_ID")
     private Long id;

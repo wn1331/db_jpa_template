@@ -2,10 +2,12 @@ package com.example.db_jpa_template.practice;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "MEMBER")
-@Data
+@Getter@Setter
 public class Member {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Column(name = "MEMBER_ID")
